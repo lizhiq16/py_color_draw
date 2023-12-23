@@ -88,6 +88,8 @@ for i in range(num_points - 1):
 plt.ylim(0,)
 plt.xlim(380, 780)
 #plt.xlim(np.min(wavelengths), np.max(wavelengths))
+plt.xlabel('Wavelength(nm)', fontsize=12)
+plt.ylabel('Intensity(a.u.)', fontsize=12)
 
 # 更新坐标轴以适应新的图形大小
 plt.tight_layout()
