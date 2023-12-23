@@ -25,6 +25,7 @@ sc = plt.scatter(data1, data2, c=data3, cmap=cmap, vmin=xmin, vmax=abs(xmin), s=
 plt.xlim(xmin, xmax)
 plt.ylim(0, 2.5)
 plt.xlabel(r'sign($\lambda_2$)$\rho$', fontsize=16)
+#plt.xlabel('sign(λ2)ρ', fontsize=16, fontstyle='italic')
 plt.ylabel('IRI(a.u.)', fontsize=16)
 
 # 设置刻度文字大小
