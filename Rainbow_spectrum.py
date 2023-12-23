@@ -45,15 +45,21 @@ while i < num_points:
             count += 1
         colors[i:i + count] = np.linspace((0, 255, 255), (0, 255, 0), count)
         i += count
-    elif 510 <= wavelength < 580:
+    elif 510 <= wavelength <= 576:
         count = 0
-        while i + count < num_points and 510 <= wavelengths[i + count] < 580:
+        while i + count < num_points and 510 <= wavelengths[i + count] <= 576:
             count += 1
         colors[i:i + count] = np.linspace((0, 255, 0), (255, 255, 0), count)
         i += count
-    elif 580 <= wavelength < 650:
+    elif 576 < wavelength < 584:
         count = 0
-        while i + count < num_points and 580 <= wavelengths[i + count] < 650:
+        while i + count < num_points and 576 < wavelengths[i + count] < 584:
+            count += 1
+        colors[i:i + count] = (255, 255, 0)
+        i += count    
+    elif 584 <= wavelength < 650:
+        count = 0
+        while i + count < num_points and 584 <= wavelengths[i + count] < 650:
             count += 1
         colors[i:i + count] = np.linspace((255, 255, 0), (255, 0, 0), count)
         i += count
