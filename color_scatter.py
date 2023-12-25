@@ -14,6 +14,7 @@ with open('output.txt', 'r') as file:
 #data = np.array(data0).astype(float)
 data = np.array(data0)
 #print("数组形状: ", data.shape)
+#print("第6-8行内容: ", data[6:8])
 
 mask = (data[:, 4] <= 2.5)
 filtered_data = data[mask]
