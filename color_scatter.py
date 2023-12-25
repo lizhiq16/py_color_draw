@@ -9,13 +9,15 @@ from matplotlib import colors
 
 with open('output.txt', 'r') as file:
     lines = file.readlines()
-    data0 = [line.split() for line in lines]
-data = np.array(data0).astype(float)
-print("数组形状: ", data.shape)
+    data0 = [[float(item) for item in line.split()] for line in lines]
+#    data0 = [line.split() for line in lines]    
+#data = np.array(data0).astype(float)
+data = np.array(data0)
+#print("数组形状: ", data.shape)
 
 mask = (data[:, 4] <= 2.5)
 filtered_data = data[mask]
-print("数组形状: ", filtered_data.shape)
+#print("数组形状: ", filtered_data.shape)
 
 data1 = filtered_data[:, 3]
 data2 = filtered_data[:, 4]
