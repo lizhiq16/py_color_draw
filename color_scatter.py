@@ -1,6 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import colors
+import time
+
+
+start = time.perf_counter()
 
 # 从txt文件读取数据
 #data = np.loadtxt('output2.txt', delimiter=' ')
@@ -60,6 +64,10 @@ fig.set_size_inches(19.2/2.54, 14.84/2.54)
 
 # 更新坐标轴以适应新的图形大小
 plt.tight_layout()
+
+end = time.perf_counter()
+time = '{:,.3f}'.format(end-start)
+print ("elapsed time(s):"+ str(time))
 
 plt.show()
 
