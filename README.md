@@ -5,11 +5,11 @@ Draw a spectrum fill by rainbow colors, and the abscissa of the spectrum is the 
 
 效果如下：
 
-[Rainbow_spectrum](https://github.com/lizhiq16/py_color_draw/blob/main/Rainbow_spectrum.png)
+![Rainbow_spectrum](https://github.com/lizhiq16/py_color_draw/blob/main/Rainbow_spectrum.png)
 
 ## color_scatter.py
 Draw a colorful scatter plot with the color of the dots being gradient filled with blue-green-red colors based on the abscissa values of your data. Since the data ranges of the two gradient parts are not the same, one color range of the drawing is scaled. This script is used to plot the output.txt file obtained by analyzing weak interactions using Multiwfn <http://sobereva.com/399>.
 
 效果如下：
 
-[color_scatter_plot](https://github.com/lizhiq16/py_color_draw/blob/main/color_scatter_plot2.png)
+![color_scatter_plot](https://github.com/lizhiq16/py_color_draw/blob/main/color_scatter_plot2.png)
