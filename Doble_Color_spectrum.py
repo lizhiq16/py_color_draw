@@ -21,8 +21,19 @@ colors[:, 3] = np.ones(num_points)  # Alpha通道，全为1（不透明）
 plt.plot(wavelengths, intensities, 'k-')  # 绘制黑色曲线
 plt.fill_between(wavelengths, intensities, color='none', edgecolor='none', alpha=0.3)
 
-# 填充彩虹渐变色
+# 填充渐变色
 for i in range(num_points - 1):
     plt.fill_between(wavelengths[i:i+2], intensities[i:i+2], color=colors[i])
+
+# 调整坐标轴范围
+plt.ylim(0,)
+plt.xlim(380, 780)
+#plt.xlim(np.min(wavelengths), np.max(wavelengths))
+plt.xlabel('Wavelength(nm)', fontsize=12)
+plt.ylabel('Intensity(a.u.)', fontsize=12)
+
+# 设置图形大小（单位为cm转英寸）
+fig = plt.gcf()
+fig.set_size_inches(19.2/2.54, 14.84/2.54)
 
 plt.show()
