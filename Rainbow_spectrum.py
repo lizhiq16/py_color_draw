@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import re
 
 # 从文件中读取波长和数据
 with open('spectrum_data1.txt', 'r') as file:
