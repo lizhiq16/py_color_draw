@@ -3,9 +3,22 @@ import numpy as np
 from matplotlib import colors
 
 # 从txt文件读取数据
-data = np.loadtxt('output2.txt', delimiter=' ')
-data1 = data[:, 0]
-data2 = data[:, 1]
+#data = np.loadtxt('output2.txt', delimiter=' ')
+#data1 = data[:, 0]
+#data2 = data[:, 1]
+
+with open('output.txt', 'r') as file:
+    lines = file.readlines()
+    data0 = [line.split() for line in lines]
+data = np.array(data0).astype(float)
+print("数组形状: ", data.shape)
+
+mask = (data[:, 4] <= 2.5)
+filtered_data = data[mask]
+print("数组形状: ", filtered_data.shape)
+
+data1 = filtered_data[:, 3]
+data2 = filtered_data[:, 4]
 
 # 自定义x轴的范围
 xmin, xmax = -0.25, 0.1
