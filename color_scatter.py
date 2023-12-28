@@ -1,5 +1,5 @@
 '''
-Athor: Li ZhiQiang
+Author: Li ZhiQiang
 Organization: JHL
 Date: 2023/12/27
 绘制彩红绿蓝渐变散点图
