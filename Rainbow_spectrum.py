@@ -103,8 +103,17 @@ plt.plot(wavelengths, intensities, 'k-')  # 绘制黑色曲线
 # plt.fill_between(wavelengths, intensities, color='none', edgecolor='none', alpha=0.3)
 
 # 仅在380-780波长范围内填充彩虹渐变色
-for i in range(num_points - 1):
-    plt.fill_between(wavelengths[i:i+2], intensities[i:i+2], color=colors[i] / 255, alpha=1)
+wavelength2 = []
+intensit2 = []
+color2 = []
+for i in range(num_points):
+	if 380 < wavelengths[i] <= 780:
+		wavelength2.append(wavelengths[i])
+		intensit2.append(intensities[i])
+		color2.append(colors[i])
+
+for i in range(len(color2)):
+    plt.fill_between(wavelength2[i:i+2], intensit2[i:i+2], color=color2[i] / 255, alpha=1)
 
 # 调整坐标轴范围
 plt.ylim(0,)
