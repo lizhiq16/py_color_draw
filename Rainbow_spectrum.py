@@ -1,12 +1,26 @@
+'''
+Athor: Li ZhiQiang
+Organization: JHL
+Date: 2023/12/27
+绘制彩虹色填充光谱图
+'''
+
 import matplotlib.pyplot as plt
 import numpy as np
 import re
+from scipy.interpolate import interp1d
 
-# 从文件中读取波长和数据
+# 从文件中读取波长和光强数据，原数据可以采用逗号或者空格分隔
 with open('spectrum_data1.txt', 'r') as file:
     lines = file.readlines()
     data = [[float(item) for item in re.split(r'[ ,]+', line)] for line in lines]
-    wavelengths, intensities = zip(*[(line[0],line[1]) for line in data])
+    wavel0, intens0 = zip(*[(line[0],line[1]) for line in data])
+
+#为了增加效果，用scipy.interpolate的interp1d插值
+f = interp1d(wavel0, intens0, kind='cubic')	# kind=zero, linear, quadratic, cubic
+wave_num=int(2*abs(wavel0[0]-wavel0[-1])+1)
+wavelengths=np.linspace(wavel0[0],wavel0[-1],wave_num)
+intensities=f(wavelengths)
 
 # 自定义彩虹渐变填充方案
 num_points = len(wavelengths)
