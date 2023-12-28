@@ -1,3 +1,10 @@
+'''
+Athor: Li ZhiQiang
+Organization: JHL
+Date: 2023/12/27
+绘制彩红绿双色渐变填充图
+'''
+
 import matplotlib.pyplot as plt
 import numpy as np
 
