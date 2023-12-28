@@ -49,7 +49,7 @@ cmap = colors.LinearSegmentedColormap.from_list('Custom cmap', cmap_list, N=256)
 sc = plt.scatter(data1, data2, c=data3, cmap=cmap, vmin=xmin, vmax=abs(xmin), s=0.5)
 
 # 设置坐标轴范围和标题
-plt.xlim(xmin, xmax)
+plt.xlim(xmin-0.01, xmax+0.01)
 plt.ylim(0, 2.5)
 plt.xlabel(r'sign($\lambda_2$)$\rho$', fontsize=16)
 #plt.xlabel('sign(λ2)ρ', fontsize=16, fontstyle='italic')
