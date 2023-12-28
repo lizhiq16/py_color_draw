@@ -11,7 +11,8 @@ import re
 from scipy.interpolate import interp1d
 
 # 从文件中读取波长和光强数据，原数据可以采用逗号或者空格分隔
-with open('spectrum_data1.txt', 'r') as file:
+ofile=(input("请输入作图数据文件名:"))
+with open(ofile, 'r') as file:
     lines = file.readlines()
     data = [[float(item) for item in re.split(r'[ ,]+', line)] for line in lines]
     wavel0, intens0 = zip(*[(line[0],line[1]) for line in data])
