@@ -1,3 +1,10 @@
+'''
+Athor: Li ZhiQiang
+Organization: JHL
+Date: 2023/12/27
+绘制彩红绿蓝渐变散点图
+'''
+
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import colors
