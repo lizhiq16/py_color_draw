@@ -11,8 +11,8 @@ import numpy as np
 # 从文件中读取波长和数据
 with open('spectrum_data.txt', 'r') as file:
     lines = file.readlines()
-    data = [line.split() for line in lines]
-    wavelengths, intensities = zip(*[(float(line[0]), float(line[1])) for line in data])
+    data = [[float(item) for item in line.split()] for line in lines]
+    wavelengths, intensities = zip(*[(line[0], line[1]) for line in data])
 
 # 自定义彩虹渐变填充方案
 num_points = len(wavelengths)
