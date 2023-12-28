@@ -107,7 +107,7 @@ wavelength2 = []
 intensit2 = []
 color2 = []
 for i in range(num_points):
-	if 380 < wavelengths[i] <= 780:
+	if 380 <= wavelengths[i] <= 780:
 		wavelength2.append(wavelengths[i])
 		intensit2.append(intensities[i])
 		color2.append(colors[i])
