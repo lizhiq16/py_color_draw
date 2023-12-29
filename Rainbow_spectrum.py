@@ -9,9 +9,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 import re
 from scipy.interpolate import interp1d
+import sys
 
 # 从文件中读取波长和光强数据，原数据可以采用逗号或者空格分隔
-ofile = input("请输入作图数据文件名:")
+def get_input_file(param_name):
+    if len(sys.argv) > 1:
+        return sys.argv[1]
+    else:
+        return input(f"Please enter the {param_name}: ")
+        
+ofile = get_input_file('file_name')
+
 with open(ofile, 'r') as file:
     lines = file.readlines()
     data = [[float(item) for item in re.split(r'[ ,]+', line)] for line in lines]
