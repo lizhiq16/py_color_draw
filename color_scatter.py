@@ -3,6 +3,9 @@ Author: Li ZhiQiang
 Organization: JHL
 Date: 2023/12/27
 绘制彩红绿蓝渐变散点图
+Since the data ranges of the two gradient parts are not the same, 
+one color range of the drawing is scaled 
+(so you have to manually move the uper tick 0.1 to the top of the color bar in the right).
 '''
 
 import matplotlib.pyplot as plt
@@ -38,7 +41,7 @@ data2 = filtered_data[:, 4]
 xmin, xmax = -0.25, 0.1
 xscal = abs(xmin/xmax)
 
-# 计算data3
+# 计算得出正负对称的data3，用来作为颜色的尺度
 data3 = np.where(data1 < 0, data1, xscal * data1)
 
 # 创建一个颜色映射
