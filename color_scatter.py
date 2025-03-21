@@ -61,9 +61,9 @@ plt.ylabel('IRI(a.u.)', fontsize=16)
 # 设置刻度文字大小
 plt.tick_params(labelsize=13)
 
-# 添加颜色条
+# 添加颜色条。 由于为了颜正确使用的data3对正向x进行了xscal，所得colorbar正向0.1的刻度需要调整至红色最上位置。
 #plt.colorbar(sc, ticks=[-0.4, 0, 0.1], label='data3')
-cbar = plt.colorbar(sc, ticks=[xmin, 0, xmax])
+cbar = plt.colorbar(sc, ticks=[xmin, -0.15, 0, xmax, xscal * xmax])
 
 # 设置颜色条刻度标签右对齐并设置字体大小
 cbar.ax.yaxis.set_tick_params(labelright=True, labelsize=12)
